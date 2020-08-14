@@ -7,10 +7,13 @@ function map(arr, fn) {
 }
 
 
-function reduce(arr, fn, init) {
-    let result = (!!init ? init : 0)
-    for (let i=0; i < arr.length; i++) {
-        result = arr[i]
-    };
-    return result
-}
+function reduce(arr, fn, init){
+    let result = (!!init) ? init : arr[0]
+    let i = (!!init) ? 0 : 1
+  
+    for (; i < arr.length; i++) {
+      result = fn(arr[i], result)
+    }
+  
+    return result;
+  }
