@@ -8,13 +8,11 @@ const map = (array,func) => {
 };
 
 const reduce = (array,func,startVal=0) => {
-    let reduced = startVal;
+    let returnVal = startVal;
     array.forEach(item => {
-        if (typeof(item)==='number') {
-            reduced += item;
-        }else{
-            reduced = func(item,reduced);
-        };
+
+        returnVal += func(item);
+        debugger;
     });
-    return reduced;
+    return returnVal;
 };

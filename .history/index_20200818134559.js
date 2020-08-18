@@ -10,7 +10,7 @@ const map = (array,func) => {
 const reduce = (array,func,startVal=0) => {
     let reduced = startVal;
     array.forEach(item => {
-        if (typeof(item)==='number') {
+        if (typeof(item = 'number')) {
             reduced += item;
         }else{
             reduced = func(item,reduced);
